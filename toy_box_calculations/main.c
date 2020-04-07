@@ -94,3 +94,29 @@ float calculate_surface_area(struct box toy_box) {
 
 	return surface_area;
 }
+
+float calculate_box_volume(struct box toy_box) {
+	/********************************************************\
+	* Function name - calculate_box_volume
+	*
+	* Function Purpose - calculate the volume of given box
+	*
+	* Parameters - IN struct box toy_box - struct of the box dimensions
+	*
+	* Return Value - volume of given box
+	*
+	* Side Effects - this function has no side effects
+	*
+	* Semantics - this function calculate the volume of given box, by
+	*			  function that calculate face area
+	*
+	* Author - Liri
+	\********************************************************/
+	float base_face_area = INITIAL_NUMBER;
+	float box_volume = INITIAL_NUMBER;
+
+	base_face_area = calculate_face_area(toy_box.width, toy_box.length);
+	box_volume = base_face_area * toy_box.hight;
+
+	return box_volume;
+}
