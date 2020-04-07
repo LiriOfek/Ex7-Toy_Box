@@ -40,3 +40,24 @@ struct box make_box(float witdth, float length, float hight) {
 	toy_box.hight = hight;
 	return toy_box;
 }
+
+float calculate_face_area(float width_face, float length_face) {
+	/********************************************************\
+	* Function name - calculate_face_area
+	*
+	* Function Purpose - calculate the face area
+	*
+	* Parameters - IN float width_face - width of face
+	*			   IN float length_face - length of face
+	*			   OUT float face area
+	*
+	* Return Value - area of given face
+	*
+	* Side Effects - this function has no side effects
+	*
+	* Semantics - this function calculate the area of given face
+	*
+	* Author - Liri
+	\********************************************************/
+	return width_face * length_face;
+}
