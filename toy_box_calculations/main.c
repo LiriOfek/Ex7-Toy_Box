@@ -6,6 +6,8 @@ Purpose: This file create structure that represents box,
 		 and volume of the box
 \********************************************************/
 
+#define INITIAL_NUMBER (0)
+
 struct box {
 	/*struct that contain the dimention of box*/
 	float width;
@@ -60,4 +62,35 @@ float calculate_face_area(float width_face, float length_face) {
 	* Author - Liri
 	\********************************************************/
 	return width_face * length_face;
+}
+
+float calculate_surface_area(struct box toy_box) {
+	/********************************************************\
+	* Function name - calculate_surface_area
+	*
+	* Function Purpose - calculate the face area
+	*
+	* Parameters - IN struct box toy_box - struct of the box dimensions
+	*
+	* Return Value - surface area of given box
+	*
+	* Side Effects - this function has no side effects
+	*
+	* Semantics - this function calculate the surface area of given box, by
+	*			  function that calculate face area
+	*
+	* Author - Liri
+	\********************************************************/
+	float base_face_area = INITIAL_NUMBER;
+	float front_face_area = INITIAL_NUMBER;
+	float side_face_area = INITIAL_NUMBER;
+	float surface_area = INITIAL_NUMBER;
+
+	base_face_area = calculate_face_area(toy_box.width, toy_box.length);
+	front_face_area = calculate_face_area(toy_box.width, toy_box.hight);
+	side_face_area = calculate_face_area(toy_box.length, toy_box.hight);
+
+	surface_area = 2 * (base_face_area + front_face_area + side_face_area);
+
+	return surface_area;
 }
